@@ -23,7 +23,7 @@ jobs:
         - name: Install GHC cross compiler
           run: emconfigure ghcup install ghc --set javascript-unknown-ghcjs-9.10.0.20240413
         - name: Build project
-          run: cabal build
+          run: cabal update && cabal build
         - name: Move files
           run: |
             mkdir ./public
@@ -34,4 +34,3 @@ jobs:
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: ./public
-
