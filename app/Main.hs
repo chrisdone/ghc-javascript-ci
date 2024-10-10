@@ -9,4 +9,5 @@ circle :: String
 circle = "<svg width=300 height=300><circle cx=50% cy=50% r=50%></circle></svg>"
 
 main :: IO ()
-main = withCString circle setInnerHtml
+main = do putStrLn "OK, go!"
+          withCString circle setInnerHtml
